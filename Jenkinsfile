@@ -1,5 +1,5 @@
 // Derive environment from branch names.
-AGENT_TAG = "${env.BRANCH_NAME == 'main' ? 'lexbldlinux30' : (env.BRANCH_NAME ==~ /^release-\d+$/ ? 'lexbldlinux31' : 'lexbldlinux32')}"
+AGENT_TAG = "${env.BRANCH_NAME == 'main' ? 'plexcdpapp01' : (env.BRANCH_NAME ==~ /^release-\d+$/ ? 'qlexcdpapp01' : 'linux')}"
 
 pipeline {
   agent {
@@ -9,8 +9,9 @@ pipeline {
     stage('Hello') {
       steps {
         echo "Building on ${AGENT_TAG}"
-        sh "hostname"
-        sh "pwd"
+        scm checkout
+        dir 'app'
+        sh 'composer install'
       }
     }
   }

@@ -1,0 +1,19 @@
+{
+  "require": {
+      "cakephp/cakephp": "^2.10",
+      "maurymmarques/markdown-plugin": "dev-master",
+      "aws/aws-sdk-php": "^3.158",
+      "eddturtle/direct-upload": "^1.6"
+  },
+  "config": {
+      "vendor-dir": "Vendor/"
+  },
+  "require-dev": {
+      "cakephp/debug_kit": "^2.2"
+  },
+  "extra": {
+      "installer-paths": {
+          "Plugin/Markdown": ["maurymmarques/markdown-plugin"]
+      }
+  }
+}
