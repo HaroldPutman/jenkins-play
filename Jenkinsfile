@@ -10,8 +10,9 @@ pipeline {
       steps {
         echo "Building on ${AGENT_TAG}"
         checkout scm
-        dir 'app'
-        sh 'composer install'
+        dir 'app' {
+          sh 'composer install'
+        }
       }
     }
   }
