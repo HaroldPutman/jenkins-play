@@ -9,7 +9,7 @@ pipeline {
     stage('Hello') {
       steps {
         echo "Building on ${AGENT_TAG}"
-        scm checkout
+        checkout scm
         dir 'app'
         sh 'composer install'
       }
